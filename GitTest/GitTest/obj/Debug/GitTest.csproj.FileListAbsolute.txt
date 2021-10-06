@@ -1,0 +1,7 @@
+D:\PRO2021\GitTest\GitTest\bin\Debug\GitTest.exe.config
+D:\PRO2021\GitTest\GitTest\bin\Debug\GitTest.exe
+D:\PRO2021\GitTest\GitTest\bin\Debug\GitTest.pdb
+D:\PRO2021\GitTest\GitTest\obj\Debug\GitTest.csproj.AssemblyReference.cache
+D:\PRO2021\GitTest\GitTest\obj\Debug\GitTest.csproj.CoreCompileInputs.cache
+D:\PRO2021\GitTest\GitTest\obj\Debug\GitTest.exe
+D:\PRO2021\GitTest\GitTest\obj\Debug\GitTest.pdb
