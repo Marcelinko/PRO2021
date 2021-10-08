@@ -1,0 +1,10 @@
+D:\PRO2021\Koch_snowflake\Koch_snowflake\bin\Debug\Koch_snowflake.exe.config
+D:\PRO2021\Koch_snowflake\Koch_snowflake\bin\Debug\Koch_snowflake.exe
+D:\PRO2021\Koch_snowflake\Koch_snowflake\bin\Debug\Koch_snowflake.pdb
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.csproj.AssemblyReference.cache
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.Form1.resources
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.Properties.Resources.resources
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.csproj.GenerateResource.cache
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.csproj.CoreCompileInputs.cache
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.exe
+D:\PRO2021\Koch_snowflake\Koch_snowflake\obj\Debug\Koch_snowflake.pdb
