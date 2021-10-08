@@ -10,12 +10,7 @@ namespace Rekurzija
 	{
 		static void Main(string[] args)
 		{
-            Console.WriteLine(Naloga3(2));
-			Console.WriteLine(Naloga3(5));
-			Console.WriteLine(Naloga4(2));
-			Console.WriteLine(Naloga4(5));
-			Console.WriteLine(Naloga5(2));
-			Console.WriteLine(Naloga5(5));
+            Console.WriteLine(Palindrom("POTOP"));
 			Console.ReadKey();
 		}
 		static int Fib(int st) 
@@ -51,7 +46,7 @@ namespace Rekurzija
 		{
 			if (st == 1)
 				return 2;
-			return 3* Naloga4(st - 1) + 2;
+			return 3 * Naloga4(st - 1) + 2;
 		}
 		static int Naloga5(int st)
 		{
@@ -62,5 +57,27 @@ namespace Rekurzija
 			return Naloga5(st - 1)*2+Naloga5(st-2);
 		}
 
+		static void Hanoi(int st,String zacetni,String koncni, String umesni)
+        {
+			if (st == 1)
+            {
+				Console.WriteLine("Disk 1 iz " + zacetni + " na " + koncni);
+				return;
+			}
+			Hanoi(st-1,zacetni,umesni,koncni);
+            Console.WriteLine("Disk "+st+" iz "+zacetni+" na "+koncni);
+			Hanoi(st - 1, umesni, koncni, zacetni);
+        }
+		static Boolean Palindrom(String beseda)
+        {
+			if (beseda.Length == 0 || beseda.Length == 1)
+				return true;
+            else
+            {
+				if (beseda[0] != beseda[beseda.Length - 1])
+					return false;
+				else return Palindrom(beseda.Substring(1, beseda.Length - 2));
+            }
+        }
 	}
 }
