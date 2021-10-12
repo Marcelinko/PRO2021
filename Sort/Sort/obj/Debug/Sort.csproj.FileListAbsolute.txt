@@ -1,0 +1,7 @@
+D:\PRO2021\Sort\Sort\bin\Debug\Sort.exe.config
+D:\PRO2021\Sort\Sort\bin\Debug\Sort.exe
+D:\PRO2021\Sort\Sort\bin\Debug\Sort.pdb
+D:\PRO2021\Sort\Sort\obj\Debug\Sort.csproj.AssemblyReference.cache
+D:\PRO2021\Sort\Sort\obj\Debug\Sort.csproj.CoreCompileInputs.cache
+D:\PRO2021\Sort\Sort\obj\Debug\Sort.exe
+D:\PRO2021\Sort\Sort\obj\Debug\Sort.pdb
