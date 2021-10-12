@@ -15,7 +15,7 @@ namespace Koch_snowflake
         private double x;//pozicija želve
         private double y;
         private double alfa;//kot glede na os x
-        Pen pen = new Pen(Color.Black, 3);
+        Pen pen = new Pen(Color.Black, 2);
         public Form1()
         {
             InitializeComponent();
@@ -36,22 +36,56 @@ namespace Koch_snowflake
         {
             double stariX = x;
             double stariY = y;
-            x = x + Math.Cos(alfa * Math.PI / 180);
-            y = y + Math.Sin(alfa * Math.PI / 180);
+            x = x + d*Math.Cos(alfa * Math.PI / 180);
+            y = y + d*Math.Sin(alfa * Math.PI / 180);
             int x1 = risaniX(stariX);
             int y1 = risaniY(stariY);
             int x2 = risaniX(x);
             int y2 = risaniY(y);
             g.DrawLine(pen, x1, y1, x2, y2);
         }
+        public void Koch(int n, double korak,Graphics g)
+        {
+            if(n == 0)
+            {
+                Premik(korak, g);
+                return;
+            }
+            Koch(n - 1, korak, g);
+            ObratLevo(60);
+            Koch(n - 1,korak,g);
+            ObratLevo(-120);
+            Koch(n - 1, korak, g);
+            ObratLevo(60);
+            Koch(n - 1, korak, g);
+        }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            x = 0.5;
-            y = 0.5;
+            //x = 0.5;
+            //y = 0.5;
+            //alfa = 0;
+            //for(int k = 0; k < 6; k++)
+            //{
+            //    double korak = 0.2;
+            //    Premik(korak, g);
+            //    ObratLevo(360 / 6);
+            //}
+            //Random r = new Random();
+            //x = 0.5;
+            //y = 0.5;
+            //alfa = 0;
+            x = 0.4;
+            y = 0.3;
             alfa = 0;
-            Premik(0.5, g);
+            int n = 4;
+            //Koch(2, 1 / Math.Pow(3, n), g);
+            for(int k = 0; k < 6; k++)
+            {
+                Koch(n, 1 / Math.Pow(3, n)*0.35, g);
+                ObratLevo(360 / 6);
+            }
         }
     }
 }
