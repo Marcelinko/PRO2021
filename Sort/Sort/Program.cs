@@ -8,62 +8,77 @@ namespace Sort
 {
     class Program
     {
-        static void Izbiranje(int[] tab)
+        static void Izpis(String[] tab)
         {
-            for (int i = 0; i < tab.Length - 1; i++)
+            for (int i = 0; i < tab.Length; i++)
             {
-                int min = tab[i];
-                int minIndeks = i;
-                for(int j = i; j<tab.Length; j++)
-                {
-                    if(tab[j] < min)
-                    {
-                        min = tab[j];
-                        minIndeks = j;
-                    }
-                }
-                int temp = tab[i];
-                tab[i] = tab[minIndeks];
-                tab[minIndeks] = temp;
-            }
-        }
-        static void Vstavljanje(int[] tab)
-        {
-            for(int i = 0; i < tab.Length; i++)
-            {
-                int j = i;
-                int temp = tab[i];
-                while (j > 0 && tab[j-1]>temp)
-                {
-                    tab[j] = tab[j - 1];
-                    j--;
-                }
-                tab[j] = temp;
-            }
-        }
-        static void Izpis(int[] tab)
-        {
-            for(int i = 0; i<tab.Length; i++)
-            {
-                Console.Write(tab[i]+" ");
+                Console.Write(tab[i] + " ");
             }
             Console.WriteLine();
         }
         static void Main(string[] args)
         {
-            int n = 100000;
-            int[] tab = new int[n];
-            Random r = new Random();
-            for(int i = 0; i < n; i++)
-            {
-                tab[i] = r.Next(n);
-            }
-            DateTime d = DateTime.Now;
-            Vstavljanje(tab);
-            DateTime d1 = DateTime.Now;
-            TimeSpan ts =d1 - d;
-            Console.WriteLine("Cas vstavljanja je "+ts.TotalMilliseconds+"ms");
+            //int n = 100000;
+            //int[] tab = new int[n];
+            //Random r = new Random();
+            //for(int i = 0; i < n; i++)
+            //{
+            //    tab[i] = r.Next(n);
+            //}
+            String[] tab = {"Jagoda", "Banana", "Burek", "Polenta", "Ječmen", "Jota" };
+            QuickSort(0, tab.Length-1, tab);
             Console.ReadKey();
+        }
+        static int Pivot(int zacetek, int konec, String[] tab)
+        {
+            String p = tab[zacetek];
+            int m = zacetek;
+            int n = konec + 1;
+            //poisci z m prvega, ki je vecji od p
+            do
+            {
+                m = m + 1;
+            }
+            while (tab[m].CompareTo(p) < 0 && m < konec);
+            do
+            {
+                n = n - 1;
+            }
+            while (tab[n].CompareTo(p) > 0);
+            //tab[m] je večji od p
+            //tab[n] je manjši od p
+            //zamenjaj jih
+            while (m < n)
+            {
+                String temp = tab[m];
+                tab[m] = tab[n];
+                tab[n] = temp;
+                do
+                {
+                    m = m + 1;
+                }
+                while (tab[m].CompareTo(p) < 0);
+                do
+                {
+                    n = n - 1;
+                }
+                while (tab[n].CompareTo(p) > 0);
+            }
+            //zamenjaj pivotni element
+            String temp2 = tab[n];
+            tab[n] = tab[zacetek];
+            tab[zacetek] = temp2;
+            Izpis(tab);
+            return n;
+        }
+        static void QuickSort(int zacetek, int konec, String[] tab)
+        {
+            if (zacetek >= konec)
+                return;
+            int a = Pivot(zacetek, konec, tab);
+            QuickSort(zacetek, a - 1, tab);//levi del
+            QuickSort(a + 1, konec, tab);//desni del
+
         }
     }
 }
